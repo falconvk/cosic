@@ -30,5 +30,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Service integration practice",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "Nikola Rajkovic",
+  "license": "ISC"
 }
