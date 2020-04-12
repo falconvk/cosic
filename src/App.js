@@ -1,8 +1,8 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
+  // Switch,
+  // Route,
   Link
 } from "react-router-dom";
 
@@ -15,13 +15,13 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Početna - placeholder</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/kosarka">Košarka</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/nogomet">Nogomet</Link>
             </li>
           </ul>
         </nav>
@@ -29,15 +29,15 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          {/*<Route path="/about">*/}
+          {/*  <About />*/}
+          {/*</Route>*/}
+          {/*<Route path="/users">*/}
+          {/*  <Users />*/}
+          {/*</Route>*/}
+          {/*<Route path="/">*/}
+          {/*  <Home />*/}
+          {/*</Route>*/}
         </Switch>
       </div>
     </Router>
