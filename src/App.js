@@ -5,12 +5,22 @@ import {
   // Route,
   Link
 } from "react-router-dom";
+import 'styles/app.scss'
+import logo from 'static/images/udkc-logo-blue-standard.png'
 
 // TODO: set up routing
 
 function App() {
   return (
     <Router>
+      <header>
+        <div className="logo-container">
+          <img src={logo} alt="logo" />
+        </div>
+        <nav className="nav-container">
+
+        </nav>
+      </header>
       <div>
         <nav>
           <ul>
