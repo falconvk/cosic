@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df74ba864b2fc78cf1721a41f178926c",
+    "revision": "156beca73c67dadb1338591ecfd80a10",
     "url": "/cosic/index.html"
   },
   {
