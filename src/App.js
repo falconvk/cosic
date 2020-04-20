@@ -18,9 +18,29 @@ function App() {
           <img src={logo} alt="logo" />
         </div>
         <nav className="nav-container">
-
+          <ul className="">
+            <li>
+              <a href="https://www.kresimircosic.com/hr/o-nama/">O nama</a>
+            </li>
+            <li className="selected">
+              <a href="https://www.kresimircosic.com/hr/kresimir-cosic/zivotopis/">Krešimir Ćosić</a>
+            </li>
+            <li>
+              <a href="https://www.kresimircosic.com/hr/vijesti/">Vijesti</a>
+            </li>
+            <li>
+              <a href="https://www.kresimircosic.com/hr/knjiga-sjecanja/">Knjiga sjećanja</a>
+            </li>
+            <li>
+              <a href="https://www.kresimircosic.com/hr/shop/">Kupnjom doniraj</a>
+            </li>
+            <li>
+              <a href="https://www.kresimircosic.com/hr/kontakt/">Kontakt</a>
+            </li>
+          </ul>
         </nav>
       </header>
+
       <div>
         <nav>
           <ul>
