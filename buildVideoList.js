@@ -4,8 +4,8 @@ const axios = require('axios')
 
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos'
-const YTK = 'AIzaSyBr_IPur83tI5d0uukRvi32EZf69JaTyvc'
-const CHID = 'UCAAui2B1chG8tt5Aoow6e_A'
+const YTK = ''
+const CHID = ''
 
 const defaultSearchParams = {
   key: process.env.REACT_APP_YTK || YTK,
