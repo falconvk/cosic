@@ -4,7 +4,6 @@ import logo from 'static/images/udkc-logo-blue-standard.png'
 import Container from 'components/container'
 
 function App() {
-  console.log(process.env.NODE_ENV)
   return (
     <div>
       <header>
