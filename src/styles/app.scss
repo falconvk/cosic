@@ -63,3 +63,12 @@ header {
     }
   }
 }
+
+.page-container {
+  display: flex;
+  flex-flow: row nowrap;
+
+  //nav {
+  //  width: 16.666%;
+  //}
+}

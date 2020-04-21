@@ -10,6 +10,8 @@
 
 # production
 /build
+.env
+/src/static/videos.json
 
 # misc
 .DS_Store
