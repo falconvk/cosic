@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-flow: row nowrap;
   padding-top: 25px;
-  height: 120px;
+  min-height: 120px;
   //border-bottom: 2px solid purple;
 
   .logo-container {

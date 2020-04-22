@@ -43,6 +43,10 @@
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media (max-width: 463px) {
+    justify-content: center;
+  }
 }
 
 .placeholderText {
