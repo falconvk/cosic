@@ -23,8 +23,8 @@ export default function Thumbnail(props) {
         className={imgClass}
         src={thumbnail.url}
         alt={title}
-        width="320"
-        height="180"
+        width="210"
+        height="117.5"
         onClick={handleClick}
       />
       <div className={s.details}>

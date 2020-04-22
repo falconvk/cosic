@@ -1,10 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import YouTube from 'react-youtube'
+import s from 'components/Player/style.module.scss'
 
 export default function Player(props) {
   return (
-    <YouTube {...props} />
+    <YouTube
+      className={s.root}
+      opts={{
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          'autoplay': 1,
+        }
+      }}
+      {...props}
+    />
   )
 }
 
