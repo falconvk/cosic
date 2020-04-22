@@ -15,10 +15,11 @@ export default function Thumbnail(props) {
   const handleClick = () => onClick(video)
 
   const thumbnail = medium || high || standard || def
+  const rootClass = `${s.root} ${isSelected ? s.selected : ''}`
   const imgClass = isSelected ? s.selected : ''
 
   return (
-    <div className={s.root}>
+    <div className={rootClass}>
       <img
         className={imgClass}
         src={thumbnail.url}

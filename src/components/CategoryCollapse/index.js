@@ -21,7 +21,7 @@ export default function CategoryCollapse(props) {
 
   return (
     <Fragment>
-      <h1 className={s.title} onClick={() => onToggle(category)}>
+      <h1 className={`${s.title} ${toggled ? s.open : ''}`} onClick={() => onToggle(category)}>
         {`${sportGroupLabels[category]} (${videos.length})`}
       </h1>
       {!!selectedVideo && (
@@ -47,7 +47,7 @@ export default function CategoryCollapse(props) {
         </div>
       )}
       {toggled && !videos.length && (
-        <div>Nema videa.</div>
+        <div className={s.placeholderText}>Nema videa.</div>
       )}
     </Fragment>
   )
