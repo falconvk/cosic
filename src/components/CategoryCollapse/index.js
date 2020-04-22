@@ -20,10 +20,15 @@ export default function CategoryCollapse(props) {
     setSelectedVideo(video.id)
   }, [])
 
-  const handleToggleClick = () => {
+  const handlePlayerReady = useCallback(() => {
+    setLoading(false)
+    scrollToRef(titleRef)
+  }, [titleRef])
+
+  const handleToggleClick = useCallback(() => {
     setLoading(true)
     onToggle(category)
-  }
+  }, [category])
 
   // reset selected video on toggle
   useEffect(() => setSelectedVideo(null), [toggled])
@@ -39,7 +44,7 @@ export default function CategoryCollapse(props) {
       </h1>
       {!!selectedVideo && (
         <div className={s.playerContainer}>
-          <Player videoId={selectedVideo} onReady={() => setLoading(false)} />
+          <Player videoId={selectedVideo} onReady={handlePlayerReady} />
           {!!loading && (
             <div className={s.loader}>
               <span>Loading...</span>
