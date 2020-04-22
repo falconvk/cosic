@@ -6,8 +6,8 @@ const constants = require('./src/constants.js')
 
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos'
-const YTK = 'AIzaSyBr_IPur83tI5d0uukRvi32EZf69JaTyvc'
-const CHID = 'UC9ChKJPJlQK7qpbj2XUv1rA'
+const YTK = ''
+const CHID = ''
 
 const defaultSearchParams = {
   key: process.env.REACT_APP_YTK || YTK,
