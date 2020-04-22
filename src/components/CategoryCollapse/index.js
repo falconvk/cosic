@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import s from 'components/CategoryCollapse/style.module.scss'
 import Thumbnail from 'components/Thumbnail'
 import Player from 'components/Player'
+import { Collapse } from 'react-collapse'
 
 import { sportGroupLabels } from 'constants.js'
 
@@ -16,12 +17,17 @@ export default function CategoryCollapse(props) {
     setSelectedVideo(video.id)
   }, [])
 
+  const handleToggleClick = () => {
+    setLoading(true)
+    onToggle(category)
+  }
+
   // reset selected video on toggle
   useEffect(() => setSelectedVideo(null), [toggled])
 
   return (
     <Fragment>
-      <h1 className={`${s.title} ${toggled ? s.open : ''}`} onClick={() => onToggle(category)}>
+      <h1 className={`${s.title} ${toggled ? s.open : ''}`} onClick={handleToggleClick}>
         {`${sportGroupLabels[category]} (${videos.length})`}
       </h1>
       {!!selectedVideo && (
@@ -34,21 +40,23 @@ export default function CategoryCollapse(props) {
           )}
         </div>
       )}
-      {toggled && !!videos.length && (
-        <div className={s.videoList}>
-          {videos.map(video => (
-            <Thumbnail
-              key={video.id}
-              video={video}
-              onClick={handleVideoClick}
-              isSelected={selectedVideo === video.id}
-            />
-          ))}
-        </div>
-      )}
-      {toggled && !videos.length && (
-        <div className={s.placeholderText}>Nema videa.</div>
-      )}
+      <Collapse isOpened={toggled}>
+        {!!videos.length && (
+          <div className={s.videoList}>
+            {videos.map(video => (
+              <Thumbnail
+                key={video.id}
+                video={video}
+                onClick={handleVideoClick}
+                isSelected={selectedVideo === video.id}
+              />
+            ))}
+          </div>
+        )}
+        {!videos.length && (
+          <div className={s.placeholderText}>Nema videa.</div>
+        )}
+      </Collapse>
     </Fragment>
   )
 }

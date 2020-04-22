@@ -17,6 +17,10 @@
   }
 }
 
+:global(.ReactCollapse--collapse) {
+  transition: height 300ms;
+}
+
 .playerContainer {
   position: relative;
   padding-top: 56.25%;
