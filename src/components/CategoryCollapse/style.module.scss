@@ -1,3 +1,16 @@
+.title {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid white;
+
+  &:hover {
+    border-bottom: 2px solid #eeeeee;
+    cursor: pointer;
+  }
+}
+
 .playerContainer {
   position: relative;
   padding-top: 56.25%;

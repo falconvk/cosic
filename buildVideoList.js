@@ -70,7 +70,7 @@ function writeVideosToFile(videos) {
 
 function categorizeVideos(list) {
   const result = {}
-  const sportGroupKeys = Object.getOwnPropertyNames(constants.sportGroups)
+  const sportGroupKeys = constants.sportGroupKeys
   const sportTags = Object.values(constants.SPORTS)
 
   sportGroupKeys.forEach(group => {

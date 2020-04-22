@@ -7,7 +7,7 @@ import Player from 'components/Player'
 import { sportGroupLabels } from 'constants.js'
 
 export default function CategoryCollapse(props) {
-  const { category, videos } = props
+  const { category, videos, toggled, onToggle } = props
 
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -16,9 +16,14 @@ export default function CategoryCollapse(props) {
     setSelectedVideo(video.id)
   }, [])
 
+  // reset selected video on toggle
+  useEffect(() => setSelectedVideo(null), [toggled])
+
   return (
     <Fragment>
-      <h1>{sportGroupLabels[category]}</h1>
+      <h1 className={s.title} onClick={() => onToggle(category)}>
+        {`${sportGroupLabels[category]} (${videos.length})`}
+      </h1>
       {!!selectedVideo && (
         <div className={s.playerContainer}>
           <Player videoId={selectedVideo} onReady={() => setLoading(false)} />
@@ -29,7 +34,7 @@ export default function CategoryCollapse(props) {
           )}
         </div>
       )}
-      {!!videos.length && (
+      {toggled && !!videos.length && (
         <div className={s.videoList}>
           {videos.map(video => (
             <Thumbnail
@@ -41,7 +46,7 @@ export default function CategoryCollapse(props) {
           ))}
         </div>
       )}
-      {!videos.length && (
+      {toggled && !videos.length && (
         <div>Nema videa.</div>
       )}
     </Fragment>
@@ -51,4 +56,6 @@ export default function CategoryCollapse(props) {
 CategoryCollapse.propTypes = {
   category: PropTypes.string.isRequired,
   videos: PropTypes.array.isRequired,
+  toggled: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 }

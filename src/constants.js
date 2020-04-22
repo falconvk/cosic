@@ -32,6 +32,19 @@ const sportGroups = {
   vodeni2: [SPORTS.KAJAK, SPORTS.VESLANJE, SPORTS.JEDRILICARSTVO],
 }
 
+const sportGroupKeys = [
+  'kosarka',
+  'nogomet',
+  'borilacki',
+  'rukomet',
+  'odbojka',
+  'vodeni',
+  'atletika',
+  'zimski',
+  'tenis',
+  'vodeni2',
+]
+
 const sportGroupLabels = {
   kosarka: 'Košarka',
   nogomet: 'Nogomet',
@@ -48,5 +61,6 @@ const sportGroupLabels = {
 module.exports = {
   SPORTS,
   sportGroups,
+  sportGroupKeys,
   sportGroupLabels,
 }
