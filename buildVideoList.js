@@ -2,10 +2,12 @@ const fs = require('fs')
 const path = require('path')
 const axios = require('axios')
 
+const constants = require('./src/constants.js')
+
 const SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 const VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos'
-const YTK = ''
-const CHID = ''
+const YTK = 'AIzaSyBr_IPur83tI5d0uukRvi32EZf69JaTyvc'
+const CHID = 'UC9ChKJPJlQK7qpbj2XUv1rA'
 
 const defaultSearchParams = {
   key: process.env.REACT_APP_YTK || YTK,
@@ -66,12 +68,37 @@ function writeVideosToFile(videos) {
   }
 }
 
+function categorizeVideos(list) {
+  const result = {}
+  const sportGroupKeys = Object.getOwnPropertyNames(constants.sportGroups)
+  const sportTags = Object.values(constants.SPORTS)
+
+  sportGroupKeys.forEach(group => {
+    result[group] = []
+  })
+
+  for (const item of list) {
+    const { snippet: { tags } } = item
+    const sport = tags.find(tag => sportTags.includes(tag))
+    if (sport) {
+      const group = sportGroupKeys.find(
+        key => constants.sportGroups[key].includes(sport)
+      )
+      result[group].push(item)
+    }
+  }
+
+  console.log('done categorizing')
+  return result
+}
+
 async function start() {
   try {
     console.log('starting fetch...')
     await fetchAllVideos()
     console.log('done fetching')
-    writeVideosToFile(videoList)
+    const data = categorizeVideos(videoList)
+    writeVideosToFile(data)
   } catch (e) {
     console.error(e)
   }
