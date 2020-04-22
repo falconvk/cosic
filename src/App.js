@@ -15,7 +15,9 @@ function App() {
             <li>
               <a href="https://www.kresimircosic.com/hr/o-nama/">O nama</a>
             </li>
-            <li className="selected">
+            <li
+              // className="selected"
+            >
               <a href="https://www.kresimircosic.com/hr/kresimir-cosic/zivotopis/">Krešimir Ćosić</a>
             </li>
             <li>
