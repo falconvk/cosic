@@ -17,6 +17,33 @@
   }
 }
 
+.filterList {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 5px;
+
+  .filter {
+    margin-right: 10px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    color: #bbbbbb;
+    text-transform: uppercase;
+
+    &:hover {
+      border-color: #0019a9;
+      color: #0019a9;
+      cursor: pointer;
+    }
+
+    &.active {
+      border-color: #0019a9;
+      background-color: #0019a9;
+      color: white;
+    }
+  }
+}
+
 :global(.ReactCollapse--collapse) {
   transition: height 300ms;
 }

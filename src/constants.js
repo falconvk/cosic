@@ -19,6 +19,19 @@ const SPORTS = {
   JEDRILICARSTVO: 'jedrilicarstvo',
 }
 
+const SAVJETI = 'savjeti'
+const POZNATI = 'poznati'
+const INDIVIDUALNO = 'individualno'
+const PAR = 'par'
+
+const FILTERS = [SAVJETI, POZNATI, INDIVIDUALNO, PAR]
+const filterLabels = {
+  [SAVJETI]: 'Savjeti trenera',
+  [POZNATI]: 'Poznati sportaši',
+  [INDIVIDUALNO]: 'Individualne vježbe',
+  [PAR]: 'Vježbe u paru',
+}
+
 const sportGroups = {
   kosarka: [SPORTS.KOSARKA],
   nogomet: [SPORTS.NOGOMET],
@@ -60,6 +73,8 @@ const sportGroupLabels = {
 
 module.exports = {
   SPORTS,
+  FILTERS,
+  filterLabels,
   sportGroups,
   sportGroupKeys,
   sportGroupLabels,

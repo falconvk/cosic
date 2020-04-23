@@ -14,8 +14,6 @@ export default function Container() {
     })
   }, [])
 
-  console.log(sportGroupKeys)
-
   return (
     <div className={s.root}>
       {sportGroupKeys.map(group => (
@@ -24,6 +22,7 @@ export default function Container() {
           videos={videos[group]}
           toggled={selectedCategory === group}
           onToggle={handleCategoryToggle}
+          key={group}
         />
       ))}
     </div>
