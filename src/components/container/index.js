@@ -16,6 +16,12 @@ export default function Container() {
 
   return (
     <div className={s.root}>
+      <div className={s.title}>
+        Trenirajte od kuće
+      </div>
+      <div className={s.subtitle}>
+        Odaberite kategoriju kako bi se prikazala lista vježbi te po potrebi dodatno filtrirajte.
+      </div>
       {sportGroupKeys.map(group => (
         <CategoryCollapse
           category={group}
