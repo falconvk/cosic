@@ -78,10 +78,3 @@ module.exports = {
   sportGroupKeys,
   sportGroupLabels,
 }
-
-// exports.SPORTS = SPORTS
-// exports.FILTERS = FILTERS
-// exports.filterLabels = filterLabels
-// exports.sportGroups = sportGroups
-// exports.sportGroupKeys = sportGroupKeys
-// exports.sportGroupLabels = sportGroupLabels
