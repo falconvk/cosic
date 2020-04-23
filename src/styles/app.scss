@@ -4,22 +4,13 @@ header {
   padding-top: 25px;
   min-height: 120px;
   margin-bottom: 10px;
-  //border-bottom: 2px solid purple;
 
   .logo-container {
-    //box-sizing: border-box;
     width: 25%;
-    //max-width: 25%;
     max-height: 120px;
     padding-left: 30px;
 
-    //.logo {
     img {
-      //background-image: url('../static/images/udkc-logo-blue-standard.png');
-      //background-size: contain;
-      //background-repeat: no-repeat;
-      //max-width: 350px;
-      //height: 100%;
       max-width: 100%;
       cursor: pointer;
     }
@@ -68,8 +59,4 @@ header {
 .page-container {
   display: flex;
   flex-flow: column nowrap;
-
-  //nav {
-  //  width: 16.666%;
-  //}
 }
