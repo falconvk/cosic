@@ -22,21 +22,21 @@ export default function CategoryCollapse(props) {
   const [loading, setLoading] = useState(true)
   const titleRef = useRef(null)
 
-  const [activeFilters, setActiveFilters] = useState([])
-  const shownVideos = useMemo(() => {
-    if (activeFilters.length) {
-      return videos.filter(vid => activeFilters.every(f => vid.snippet.tags.includes(f)))
+  const [activeFilter, setActiveFilter] = useState(null)
+  const filteredVideos = useMemo(() => {
+    if (activeFilter) {
+      return videos.filter(vid => vid.snippet.tags.includes(activeFilter))
     }
     return videos
-  }, [videos, activeFilters])
+  }, [videos, activeFilter])
 
   const toggleFilter = useCallback((filter) => {
-    setActiveFilters(prev => {
-      if (prev.includes(filter)) return prev.filter(i => i !== filter)
+    setActiveFilter(prev => {
+      if (prev === filter) return null
       setSelectedVideo(null)
-      return [...prev, filter]
+      return filter
     })
-  }, [setActiveFilters])
+  }, [setActiveFilter, setSelectedVideo])
 
   const handleVideoClick = useCallback((video) => {
     scrollToRef(titleRef)
@@ -71,7 +71,7 @@ export default function CategoryCollapse(props) {
         <div className={s.filterList}>
           {filterTags.map(filter => (
             <span
-              className={`${s.filter} ${activeFilters.includes(filter) ? s.active : ''}`}
+              className={`${s.filter} ${activeFilter === filter ? s.active : ''}`}
               onClick={() => toggleFilter(filter)}
               key={filter}
             >
@@ -93,9 +93,9 @@ export default function CategoryCollapse(props) {
         )}
 
         {/* VIDEO LIST */}
-        {!!shownVideos.length && (
+        {!!filteredVideos.length && (
           <div className={s.videoList}>
-            {shownVideos.map(video => (
+            {filteredVideos.map(video => (
               <Thumbnail
                 key={video.id}
                 video={video}
@@ -107,7 +107,7 @@ export default function CategoryCollapse(props) {
         )}
 
         {/* NO VIDEOS PLACEHOLDER */}
-        {!shownVideos.length && (
+        {!filteredVideos.length && (
           <div className={s.placeholderText}>Nema videa.</div>
         )}
       </Collapse>
