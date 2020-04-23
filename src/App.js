@@ -2,6 +2,7 @@ import React from 'react'
 import 'styles/app.scss'
 import logo from 'static/images/udkc-logo-blue-standard.png'
 import Container from 'components/container'
+import Footer from 'components/Footer'
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         {/*</nav>*/}
 
         <Container />
+        <Footer />
       </div>
     </div>
   )

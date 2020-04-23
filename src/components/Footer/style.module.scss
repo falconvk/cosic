@@ -1,0 +1,99 @@
+.root {
+  width: 100%;
+  border-top: 2px solid #a9b6ff;
+  margin-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+
+  .arrowRow {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .arrowTop {
+      width: 50px;
+      height: 50px;
+      display: block;
+      background-image: url(../../static/images/right-arrow.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(-90deg) scale(1);
+
+      &:hover {
+        transform: rotate(-90deg) scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 50px;
+
+    @media (max-width: 768px) {
+      flex-flow: column nowrap;
+    }
+
+    > div {
+      flex: 1 100%;
+
+
+      // todo: remove
+      //min-height: 150px;
+      //border: 1px solid green;
+    }
+
+    .about {
+      display: flex;
+      flex-flow: column nowrap;
+      font-size: 1.125rem;
+      color: #0019a9;
+      line-height: 1.5rem;
+      margin-bottom: 30px;
+
+      a {
+        color: #0019a9;
+        text-decoration: none;
+
+        &:hover {
+          color: #a9b6ff;
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        max-width: 235px;
+        height: auto;
+        margin-bottom: 40px;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-flow: row nowrap;
+
+      .facebook, .youtube {
+        height: 50px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 20px;
+      }
+
+      .facebook {
+        width: 30px;
+        background-image: url(../../static/images/facebook.png);
+      }
+
+      .youtube {
+        width: 50px;
+        background-image: url(../../static/images/youtube.png);
+      }
+    }
+  }
+}
