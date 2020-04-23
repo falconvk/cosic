@@ -12,7 +12,7 @@ import s from 'components/CategoryCollapse/style.module.scss'
 import Thumbnail from 'components/Thumbnail'
 import Player from 'components/Player'
 
-import { sportGroupLabels, FILTERS, filterLabels } from 'constants.js'
+import { sportGroupLabels, filterTags, filterLabels } from 'constants.js'
 import { scrollToRef } from 'utils.js'
 
 export default function CategoryCollapse(props) {
@@ -69,7 +69,7 @@ export default function CategoryCollapse(props) {
       <Collapse isOpened={toggled}>
         {/* FILTERS */}
         <div className={s.filterList}>
-          {FILTERS.map(filter => (
+          {filterTags.map(filter => (
             <span
               className={`${s.filter} ${activeFilters.includes(filter) ? s.active : ''}`}
               onClick={() => toggleFilter(filter)}

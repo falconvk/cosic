@@ -24,13 +24,12 @@ const POZNATI = 'poznati'
 const INDIVIDUALNO = 'individualno'
 const PAR = 'par'
 
-const FILTERS = [SAVJETI, POZNATI, INDIVIDUALNO, PAR]
-const filterLabels = {
-  [SAVJETI]: 'Savjeti trenera',
-  [POZNATI]: 'Poznati sportaši',
-  [INDIVIDUALNO]: 'Individualne vježbe',
-  [PAR]: 'Vježbe u paru',
-}
+const filterTags = [SAVJETI, POZNATI, INDIVIDUALNO, PAR]
+const filterLabels = {}
+filterLabels[SAVJETI] = 'Savjeti trenera'
+filterLabels[POZNATI] = 'Poznati sportaši'
+filterLabels[INDIVIDUALNO] = 'Individualne vježbe'
+filterLabels[PAR] = 'Vježbe u paru'
 
 const sportGroups = {
   kosarka: [SPORTS.KOSARKA],
@@ -73,7 +72,7 @@ const sportGroupLabels = {
 
 module.exports = {
   SPORTS,
-  FILTERS,
+  filterTags,
   filterLabels,
   sportGroups,
   sportGroupKeys,
