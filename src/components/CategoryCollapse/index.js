@@ -36,7 +36,7 @@ export default function CategoryCollapse(props) {
       setSelectedVideo(null)
       return [...prev, filter]
     })
-  }, [activeFilters, setActiveFilters])
+  }, [setActiveFilters])
 
   const handleVideoClick = useCallback((video) => {
     scrollToRef(titleRef)
@@ -51,7 +51,7 @@ export default function CategoryCollapse(props) {
   const handleToggleClick = useCallback(() => {
     setLoading(true)
     onToggle(category)
-  }, [category])
+  }, [category, onToggle])
 
   // reset selected video on toggle
   useEffect(() => setSelectedVideo(null), [toggled])

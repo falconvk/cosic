@@ -23,14 +23,18 @@ export default function Footer() {
           </div>
 
           <div className={s.links}>
+            {/* eslint-disable-next-line */}
             <a
               href="https://www.facebook.com/kresimircosic.udruga"
               target="_blank"
+              rel="noopener noreferrer"
               className={s.facebook}
             />
+            {/* eslint-disable-next-line */}
             <a
               href="https://www.youtube.com/channel/UCz2EOiYcYRuu77c6kZ_Hj0g?view_as=subscriber"
               target="_blank"
+              rel="noopener noreferrer"
               className={s.youtube}
             />
           </div>
