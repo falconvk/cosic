@@ -22,6 +22,12 @@ export default function CategoryCollapse(props) {
   const [loading, setLoading] = useState(true)
   const playerTopRef = useRef(null)
 
+  const shownFilters = useMemo(() => {
+    return filterTags.filter(
+      item => videos.some(video => video.snippet.tags.includes(item)),
+    )
+  }, [videos])
+
   const [activeFilter, setActiveFilter] = useState(null)
   const filteredVideos = useMemo(() => {
     if (activeFilter) {
@@ -68,7 +74,7 @@ export default function CategoryCollapse(props) {
       <Collapse isOpened={toggled}>
         {/* FILTERS */}
         <div className={s.filterList}>
-          {filterTags.map(filter => (
+          {shownFilters.map(filter => (
             <span
               className={`${s.filter} ${activeFilter === filter ? s.active : ''}`}
               onClick={() => toggleFilter(filter)}
