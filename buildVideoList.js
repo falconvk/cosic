@@ -79,6 +79,7 @@ function categorizeVideos(list) {
 
   for (const item of list) {
     const { snippet: { tags } } = item
+    if (!tags) continue
     const sport = tags.find(tag => sportTags.includes(tag.toLowerCase()))
     if (sport) {
       const group = sportGroupKeys.find(
