@@ -6,7 +6,11 @@ import { sportGroupKeys, sportGroupLabels } from 'constants.js'
 import videos from 'static/videos.json'
 
 export default function Container() {
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    if (window.innerWidth >= 992) return 'kosarka'
+    return null
+  })
+
   const handleCategoryToggle = useCallback((category) => {
     setSelectedCategory(prev => {
       if (prev === category) return null
