@@ -23,7 +23,7 @@ export default function Container() {
       <div className={s.nav}>
         {sportGroupKeys.map(group => (
           <h1
-            className={s.item}
+            className={`${s.item} ${selectedCategory === group ? s.open : ''}`}
             onClick={() => handleCategorySelect(group)}
             key={group}
           >
