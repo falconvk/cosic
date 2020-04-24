@@ -16,6 +16,10 @@
   &.open {
     border-bottom: 2px solid #5c68b8;
   }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
 }
 
 .filterList {
@@ -53,6 +57,10 @@
 
 :global(.ReactCollapse--collapse) {
   transition: height 300ms;
+
+  @media (min-width: 992px) {
+    transition: none;
+  }
 }
 
 .playerContainer {
