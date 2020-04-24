@@ -20,7 +20,7 @@ export default function CategoryCollapse(props) {
 
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [loading, setLoading] = useState(true)
-  const titleRef = useRef(null)
+  const playerTopRef = useRef(null)
 
   const [activeFilter, setActiveFilter] = useState(null)
   const filteredVideos = useMemo(() => {
@@ -39,14 +39,14 @@ export default function CategoryCollapse(props) {
   }, [setActiveFilter, setSelectedVideo])
 
   const handleVideoClick = useCallback((video) => {
-    scrollToRef(titleRef)
+    scrollToRef(playerTopRef)
     setSelectedVideo(video.id)
   }, [])
 
   const handlePlayerReady = useCallback(() => {
     setLoading(false)
-    scrollToRef(titleRef)
-  }, [titleRef])
+    scrollToRef(playerTopRef)
+  }, [playerTopRef])
 
   const handleToggleClick = useCallback(() => {
     setLoading(true)
@@ -61,7 +61,6 @@ export default function CategoryCollapse(props) {
       <h1
         className={`${s.title} ${toggled ? s.open : ''}`}
         onClick={handleToggleClick}
-        ref={titleRef}
       >
         {`${sportGroupLabels[category]} (${videos.length})`}
       </h1>
@@ -79,6 +78,8 @@ export default function CategoryCollapse(props) {
           </span>
           ))}
         </div>
+
+        <div ref={playerTopRef} />
 
         {/* VIDEO PLAYER */}
         {!!selectedVideo && (
