@@ -1,6 +1,7 @@
 .root {
   margin: 0 3px 20px;
   background-color: #eeeeee;
+  max-width: 214px;
 
   &.selected {
     background-color: #0019a9;
@@ -27,6 +28,7 @@
     .title {
       font-size: 0.875rem;
       font-weight: bold;
+      margin-bottom: 3px;
     }
 
     .publishedTime {
