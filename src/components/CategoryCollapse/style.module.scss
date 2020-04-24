@@ -93,6 +93,9 @@
 
 .placeholderText {
   font-size: 0.875rem;
-  padding-left: 10px;
-  padding-bottom: 20px;
+  padding: 0 10px 20px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
