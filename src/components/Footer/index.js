@@ -7,11 +7,10 @@ import { scrollToTop } from 'utils.js'
 export default function Footer() {
   return (
     <div className={s.root}>
+      <div className={s.arrowRow}>
+        <div className={s.arrowTop} onClick={scrollToTop} />
+      </div>
       <div className={containerStyle.root}>
-        <div className={s.arrowRow}>
-          <div className={s.arrowTop} onClick={scrollToTop} />
-        </div>
-
         <div className={s.information}>
           <div className={s.about}>
             <img src={logo} alt="logo" />
